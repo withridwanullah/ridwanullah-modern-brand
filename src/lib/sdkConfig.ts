@@ -1,11 +1,11 @@
 
 import UniversalSDK from './sdk';
 
-// Configuration for the SDK - replace with your actual GitHub repo details
+// Configuration for the SDK - credentials are now loaded from environment variables
 const sdkConfig = {
-  owner: 'your-github-username', // Replace with your GitHub username
-  repo: 'ridwan-brand-data', // Replace with your GitHub repo name
-  token: 'your-github-token', // Replace with your GitHub personal access token
+  owner: import.meta.env.VITE_GITHUB_OWNER || 'your-github-username',
+  repo: import.meta.env.VITE_GITHUB_REPO || 'ridwan-brand-data',
+  token: import.meta.env.VITE_GITHUB_TOKEN || 'your-github-token',
   branch: 'main',
   basePath: 'db',
   mediaPath: 'media',
@@ -49,12 +49,136 @@ const sdkConfig = {
         image: 'string',
         excerpt: 'string',
         author: 'string',
-        published: 'boolean'
+        published: 'boolean',
+        featured: 'boolean',
+        tags: 'array',
+        readTime: 'number',
+        views: 'number',
+        likes: 'number'
       },
       defaults: {
         published: false,
+        featured: false,
         author: 'Ridwanullah',
-        created: new Date().toISOString()
+        created: new Date().toISOString(),
+        views: 0,
+        likes: 0,
+        tags: []
+      }
+    },
+    tutorials: {
+      required: ['title', 'content', 'difficulty'],
+      types: {
+        title: 'string',
+        content: 'string',
+        difficulty: 'string',
+        category: 'string',
+        image: 'string',
+        excerpt: 'string',
+        author: 'string',
+        published: 'boolean',
+        featured: 'boolean',
+        tags: 'array',
+        duration: 'number',
+        steps: 'array',
+        prerequisites: 'array',
+        tools: 'array'
+      },
+      defaults: {
+        published: false,
+        featured: false,
+        author: 'Ridwanullah',
+        created: new Date().toISOString(),
+        views: 0,
+        likes: 0,
+        tags: [],
+        steps: [],
+        prerequisites: [],
+        tools: []
+      }
+    },
+    courses: {
+      required: ['title', 'description', 'price'],
+      types: {
+        title: 'string',
+        description: 'string',
+        price: 'number',
+        category: 'string',
+        image: 'string',
+        instructor: 'string',
+        published: 'boolean',
+        featured: 'boolean',
+        duration: 'number',
+        level: 'string',
+        modules: 'array',
+        prerequisites: 'array',
+        tags: 'array',
+        enrollments: 'number',
+        rating: 'number'
+      },
+      defaults: {
+        published: false,
+        featured: false,
+        instructor: 'Ridwanullah',
+        created: new Date().toISOString(),
+        enrollments: 0,
+        rating: 0,
+        modules: [],
+        prerequisites: [],
+        tags: []
+      }
+    },
+    podcasts: {
+      required: ['title', 'description', 'audioUrl'],
+      types: {
+        title: 'string',
+        description: 'string',
+        audioUrl: 'string',
+        image: 'string',
+        category: 'string',
+        host: 'string',
+        guests: 'array',
+        duration: 'number',
+        published: 'boolean',
+        featured: 'boolean',
+        tags: 'array',
+        transcript: 'string',
+        season: 'string',
+        episode: 'number'
+      },
+      defaults: {
+        published: false,
+        featured: false,
+        host: 'Ridwanullah',
+        created: new Date().toISOString(),
+        plays: 0,
+        likes: 0,
+        guests: [],
+        tags: []
+      }
+    },
+    tools: {
+      required: ['name', 'description', 'category'],
+      types: {
+        name: 'string',
+        description: 'string',
+        category: 'string',
+        url: 'string',
+        icon: 'string',
+        featured: 'boolean',
+        active: 'boolean',
+        price: 'string',
+        tags: 'array',
+        rating: 'number',
+        reviews: 'number'
+      },
+      defaults: {
+        featured: false,
+        active: true,
+        created: new Date().toISOString(),
+        rating: 0,
+        reviews: 0,
+        tags: []
       }
     },
     services: {

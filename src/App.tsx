@@ -9,6 +9,10 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
+import Tools from "./pages/Tools";
+import Tutorials from "./pages/Tutorials";
+import Courses from "./pages/Courses";
+import Podcasts from "./pages/Podcasts";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
@@ -30,6 +34,13 @@ const App = () => (
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:postId" element={<Blog />} />
+            <Route path="/tools" element={<Tools />} />
+            <Route path="/tutorials" element={<Tutorials />} />
+            <Route path="/tutorials/:tutorialId" element={<Tutorials />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/courses/:courseId" element={<Courses />} />
+            <Route path="/podcasts" element={<Podcasts />} />
+            <Route path="/podcasts/:podcastId" element={<Podcasts />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
