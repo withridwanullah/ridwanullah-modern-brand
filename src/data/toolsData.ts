@@ -69,6 +69,86 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 12000
   },
   {
+    name: 'Vercel',
+    description: 'Platform for frontend developers, providing speed and reliability.',
+    category: 'Development',
+    url: 'https://vercel.com/',
+    icon: '▲',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['frontend', 'deployment', 'jamstack'],
+    rating: 4.7,
+    reviews: 8000
+  },
+  {
+    name: 'Netlify',
+    description: 'All-in-one platform for automating modern web projects.',
+    category: 'Development',
+    url: 'https://netlify.com/',
+    icon: '🌐',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['hosting', 'ci/cd', 'jamstack'],
+    rating: 4.6,
+    reviews: 7000
+  },
+  {
+    name: 'GitLab',
+    description: 'DevOps platform with version control and CI/CD.',
+    category: 'Development',
+    url: 'https://gitlab.com/',
+    icon: '🦊',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['git', 'devops', 'ci/cd'],
+    rating: 4.5,
+    reviews: 9000
+  },
+  {
+    name: 'Bitbucket',
+    description: 'Git repository management solution designed for professional teams.',
+    category: 'Development',
+    url: 'https://bitbucket.org/',
+    icon: '🪣',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['git', 'atlassian', 'collaboration'],
+    rating: 4.3,
+    reviews: 5000
+  },
+  {
+    name: 'Heroku',
+    description: 'Cloud platform that lets companies build, deliver, monitor and scale apps.',
+    category: 'Development',
+    url: 'https://heroku.com/',
+    icon: '🟣',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['cloud', 'paas', 'deployment'],
+    rating: 4.4,
+    reviews: 8500
+  },
+  {
+    name: 'DigitalOcean',
+    description: 'Cloud infrastructure provider focused on simplicity.',
+    category: 'Development',
+    url: 'https://digitalocean.com/',
+    icon: '🌊',
+    featured: false,
+    active: true,
+    price: 'Pay-as-you-go',
+    tags: ['cloud', 'vps', 'hosting'],
+    rating: 4.5,
+    reviews: 12000
+  },
+  
+  // Design Tools
+  {
     name: 'Figma',
     description: 'Collaborative interface design tool for UI/UX designers.',
     category: 'Design',
@@ -120,6 +200,86 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     rating: 4.4,
     reviews: 8000
   },
+  {
+    name: 'Framer',
+    description: 'Interactive design tool for creating high-fidelity prototypes.',
+    category: 'Design',
+    url: 'https://framer.com/',
+    icon: '🖌️',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['prototyping', 'interactive', 'design'],
+    rating: 4.5,
+    reviews: 6000
+  },
+  {
+    name: 'InVision',
+    description: 'Digital product design platform used to make better user experiences.',
+    category: 'Design',
+    url: 'https://invisionapp.com/',
+    icon: '👁️',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['prototyping', 'collaboration', 'ux'],
+    rating: 4.3,
+    reviews: 7500
+  },
+  {
+    name: 'Adobe XD',
+    description: 'Vector-based user experience design tool for web and mobile apps.',
+    category: 'Design',
+    url: 'https://adobe.com/products/xd.html',
+    icon: '🎯',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['adobe', 'ux', 'prototyping'],
+    rating: 4.2,
+    reviews: 9000
+  },
+  {
+    name: 'Dribbble',
+    description: 'Creative community for showcasing user-made artwork.',
+    category: 'Design',
+    url: 'https://dribbble.com/',
+    icon: '🏀',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['community', 'inspiration', 'portfolio'],
+    rating: 4.4,
+    reviews: 15000
+  },
+  {
+    name: 'Behance',
+    description: 'Creative portfolios platform by Adobe.',
+    category: 'Design',
+    url: 'https://behance.net/',
+    icon: '🎪',
+    featured: false,
+    active: true,
+    price: 'Free',
+    tags: ['portfolio', 'adobe', 'showcase'],
+    rating: 4.3,
+    reviews: 18000
+  },
+  {
+    name: 'Unsplash',
+    description: 'Beautiful free images and pictures you can download and use for anything.',
+    category: 'Design',
+    url: 'https://unsplash.com/',
+    icon: '📸',
+    featured: false,
+    active: true,
+    price: 'Free',
+    tags: ['photos', 'stock', 'free'],
+    rating: 4.7,
+    reviews: 25000
+  },
+
+  // Analytics Tools
   {
     name: 'Google Analytics',
     description: 'Web analytics service for tracking website traffic.',
@@ -173,6 +333,60 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 3000
   },
   {
+    name: 'Segment',
+    description: 'Customer data platform that helps you collect, clean, and control your data.',
+    category: 'Analytics',
+    url: 'https://segment.com/',
+    icon: '🧩',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['data', 'integration', 'cdp'],
+    rating: 4.4,
+    reviews: 4000
+  },
+  {
+    name: 'Plausible',
+    description: 'Simple and privacy-friendly alternative to Google Analytics.',
+    category: 'Analytics',
+    url: 'https://plausible.io/',
+    icon: '🔒',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['privacy', 'simple', 'gdpr'],
+    rating: 4.6,
+    reviews: 2500
+  },
+  {
+    name: 'Fathom Analytics',
+    description: 'Simple, useful website analytics that prioritize your privacy.',
+    category: 'Analytics',
+    url: 'https://usefathom.com/',
+    icon: '🎯',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['privacy', 'simple', 'fast'],
+    rating: 4.5,
+    reviews: 1800
+  },
+  {
+    name: 'Matomo',
+    description: 'Ethical alternative to Google Analytics that gives you full control.',
+    category: 'Analytics',
+    url: 'https://matomo.org/',
+    icon: '🛡️',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['privacy', 'self-hosted', 'open-source'],
+    rating: 4.3,
+    reviews: 3500
+  },
+
+  // Communication Tools
+  {
     name: 'Slack',
     description: 'Business communication platform for teams.',
     category: 'Communication',
@@ -225,6 +439,60 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 20000
   },
   {
+    name: 'Telegram',
+    description: 'Cloud-based mobile and desktop messaging app with a focus on security.',
+    category: 'Communication',
+    url: 'https://telegram.org/',
+    icon: '✈️',
+    featured: false,
+    active: true,
+    price: 'Free',
+    tags: ['messaging', 'secure', 'cloud'],
+    rating: 4.6,
+    reviews: 35000
+  },
+  {
+    name: 'WhatsApp Business',
+    description: 'Business communication platform built on WhatsApp.',
+    category: 'Communication',
+    url: 'https://business.whatsapp.com/',
+    icon: '📱',
+    featured: false,
+    active: true,
+    price: 'Free',
+    tags: ['business', 'messaging', 'mobile'],
+    rating: 4.3,
+    reviews: 28000
+  },
+  {
+    name: 'Intercom',
+    description: 'Customer messaging platform for sales, marketing, and support.',
+    category: 'Communication',
+    url: 'https://intercom.com/',
+    icon: '💡',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['customer support', 'messaging', 'business'],
+    rating: 4.4,
+    reviews: 8000
+  },
+
+  // Productivity Tools
+  {
+    name: 'Notion',
+    description: 'All-in-one workspace for notes, tasks, wikis, and databases.',
+    category: 'Productivity',
+    url: 'https://notion.so/',
+    icon: '📝',
+    featured: true,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['notes', 'database', 'workspace'],
+    rating: 4.7,
+    reviews: 22000
+  },
+  {
     name: 'Trello',
     description: 'Visual project management tool using boards and cards.',
     category: 'Productivity',
@@ -251,19 +519,6 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 15000
   },
   {
-    name: 'Notion',
-    description: 'All-in-one workspace for notes, tasks, wikis, and databases.',
-    category: 'Productivity',
-    url: 'https://notion.so/',
-    icon: '📝',
-    featured: true,
-    active: true,
-    price: 'Free/Paid',
-    tags: ['notes', 'database', 'workspace'],
-    rating: 4.7,
-    reviews: 22000
-  },
-  {
     name: 'Todoist',
     description: 'Task manager and to-do list app.',
     category: 'Productivity',
@@ -275,6 +530,45 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     tags: ['tasks', 'todo', 'productivity'],
     rating: 4.5,
     reviews: 12000
+  },
+  {
+    name: 'Monday.com',
+    description: 'Work operating system that powers teams to run projects and workflows.',
+    category: 'Productivity',
+    url: 'https://monday.com/',
+    icon: '📅',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['project management', 'workflow', 'teams'],
+    rating: 4.4,
+    reviews: 9000
+  },
+  {
+    name: 'ClickUp',
+    description: 'All-in-one productivity platform for teams.',
+    category: 'Productivity',
+    url: 'https://clickup.com/',
+    icon: '🚀',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['productivity', 'project management', 'collaboration'],
+    rating: 4.3,
+    reviews: 11000
+  },
+  {
+    name: 'Airtable',
+    description: 'Cloud collaboration service with database functionality.',
+    category: 'Productivity',
+    url: 'https://airtable.com/',
+    icon: '🗃️',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['database', 'spreadsheet', 'collaboration'],
+    rating: 4.6,
+    reviews: 8000
   },
   {
     name: 'Google Workspace',
@@ -290,30 +584,45 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 50000
   },
   {
-    name: 'Airtable',
-    description: 'Cloud collaboration service with database functionality.',
-    category: 'Database',
-    url: 'https://airtable.com/',
-    icon: '🗃️',
+    name: 'Microsoft 365',
+    description: 'Productivity suite with Office apps and cloud services.',
+    category: 'Productivity',
+    url: 'https://microsoft.com/microsoft-365',
+    icon: '🏢',
     featured: false,
     active: true,
-    price: 'Free/Paid',
-    tags: ['database', 'spreadsheet', 'collaboration'],
-    rating: 4.6,
-    reviews: 8000
+    price: 'Paid',
+    tags: ['microsoft', 'office', 'productivity'],
+    rating: 4.2,
+    reviews: 45000
   },
   {
-    name: 'MongoDB',
-    description: 'Document-oriented NoSQL database program.',
-    category: 'Database',
-    url: 'https://mongodb.com/',
-    icon: '🍃',
+    name: 'Evernote',
+    description: 'Note-taking and organization application.',
+    category: 'Productivity',
+    url: 'https://evernote.com/',
+    icon: '🐘',
     featured: false,
     active: true,
     price: 'Free/Paid',
-    tags: ['nosql', 'database', 'document'],
-    rating: 4.5,
-    reviews: 15000
+    tags: ['notes', 'organization', 'capture'],
+    rating: 4.1,
+    reviews: 20000
+  },
+
+  // Database Tools
+  {
+    name: 'Supabase',
+    description: 'Open source Firebase alternative.',
+    category: 'Database',
+    url: 'https://supabase.com/',
+    icon: '⚡',
+    featured: true,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['postgresql', 'opensource', 'backend'],
+    rating: 4.8,
+    reviews: 5000
   },
   {
     name: 'Firebase',
@@ -329,18 +638,59 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 12000
   },
   {
-    name: 'Supabase',
-    description: 'Open source Firebase alternative.',
+    name: 'MongoDB',
+    description: 'Document-oriented NoSQL database program.',
     category: 'Database',
-    url: 'https://supabase.com/',
-    icon: '⚡',
-    featured: true,
+    url: 'https://mongodb.com/',
+    icon: '🍃',
+    featured: false,
     active: true,
     price: 'Free/Paid',
-    tags: ['postgresql', 'opensource', 'backend'],
-    rating: 4.8,
-    reviews: 5000
+    tags: ['nosql', 'database', 'document'],
+    rating: 4.5,
+    reviews: 15000
   },
+  {
+    name: 'PlanetScale',
+    description: 'MySQL-compatible serverless database platform.',
+    category: 'Database',
+    url: 'https://planetscale.com/',
+    icon: '🪐',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['mysql', 'serverless', 'scaling'],
+    rating: 4.6,
+    reviews: 3000
+  },
+  {
+    name: 'Redis',
+    description: 'In-memory data structure store, used as database, cache, and message broker.',
+    category: 'Database',
+    url: 'https://redis.io/',
+    icon: '🔴',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['cache', 'memory', 'fast'],
+    rating: 4.7,
+    reviews: 8000
+  },
+  {
+    name: 'Prisma',
+    description: 'Next-generation ORM for Node.js and TypeScript.',
+    category: 'Database',
+    url: 'https://prisma.io/',
+    icon: '🔷',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['orm', 'typescript', 'database'],
+    rating: 4.5,
+    reviews: 4500
+  },
+
+  // Payment Tools
   {
     name: 'Stripe',
     description: 'Payment processing platform for online businesses.',
@@ -394,6 +744,34 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 8000
   },
   {
+    name: 'Wise',
+    description: 'International money transfer service.',
+    category: 'Payment',
+    url: 'https://wise.com/',
+    icon: '🌍',
+    featured: false,
+    active: true,
+    price: 'Transaction Fee',
+    tags: ['international', 'transfer', 'currency'],
+    rating: 4.5,
+    reviews: 12000
+  },
+  {
+    name: 'Paddle',
+    description: 'Revenue delivery platform for SaaS companies.',
+    category: 'Payment',
+    url: 'https://paddle.com/',
+    icon: '🚣',
+    featured: false,
+    active: true,
+    price: 'Transaction Fee',
+    tags: ['saas', 'billing', 'subscription'],
+    rating: 4.4,
+    reviews: 3500
+  },
+
+  // Marketing Tools
+  {
     name: 'Mailchimp',
     description: 'Email marketing and automation platform.',
     category: 'Marketing',
@@ -445,6 +823,47 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     rating: 4.4,
     reviews: 10000
   },
+  {
+    name: 'Hubspot',
+    description: 'Inbound marketing, sales, and service software.',
+    category: 'Marketing',
+    url: 'https://hubspot.com/',
+    icon: '🎯',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['crm', 'marketing', 'sales'],
+    rating: 4.3,
+    reviews: 18000
+  },
+  {
+    name: 'ActiveCampaign',
+    description: 'Customer experience automation platform.',
+    category: 'Marketing',
+    url: 'https://activecampaign.com/',
+    icon: '🎪',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['automation', 'email', 'crm'],
+    rating: 4.4,
+    reviews: 7000
+  },
+  {
+    name: 'Constant Contact',
+    description: 'Email marketing and online survey tool.',
+    category: 'Marketing',
+    url: 'https://constantcontact.com/',
+    icon: '📮',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['email marketing', 'surveys', 'small business'],
+    rating: 4.2,
+    reviews: 9000
+  },
+
+  // SEO Tools
   {
     name: 'Semrush',
     description: 'Digital marketing toolkit for SEO and content marketing.',
@@ -498,6 +917,34 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 30000
   },
   {
+    name: 'Screaming Frog',
+    description: 'Website crawler for technical SEO site audits.',
+    category: 'SEO',
+    url: 'https://screamingfrog.co.uk/',
+    icon: '🐸',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['crawler', 'audit', 'technical seo'],
+    rating: 4.4,
+    reviews: 4000
+  },
+  {
+    name: 'Ubersuggest',
+    description: 'Keyword research and competitor analysis tool.',
+    category: 'SEO',
+    url: 'https://neilpatel.com/ubersuggest/',
+    icon: '💡',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['keywords', 'research', 'competitor'],
+    rating: 4.2,
+    reviews: 5500
+  },
+
+  // Cloud Tools
+  {
     name: 'AWS',
     description: 'Comprehensive cloud computing platform by Amazon.',
     category: 'Cloud',
@@ -537,18 +984,33 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 18000
   },
   {
-    name: 'Vercel',
-    description: 'Platform for frontend developers, providing speed and reliability.',
+    name: 'Cloudflare',
+    description: 'Web infrastructure and website security company.',
     category: 'Cloud',
-    url: 'https://vercel.com/',
-    icon: '▲',
+    url: 'https://cloudflare.com/',
+    icon: '🛡️',
     featured: false,
     active: true,
     price: 'Free/Paid',
-    tags: ['frontend', 'deployment', 'jamstack'],
-    rating: 4.7,
-    reviews: 8000
+    tags: ['cdn', 'security', 'performance'],
+    rating: 4.6,
+    reviews: 12000
   },
+  {
+    name: 'Railway',
+    description: 'Infrastructure platform where you can provision infrastructure, develop with that infrastructure locally.',
+    category: 'Cloud',
+    url: 'https://railway.app/',
+    icon: '🚂',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['deployment', 'infrastructure', 'developer'],
+    rating: 4.5,
+    reviews: 2000
+  },
+
+  // Automation Tools
   {
     name: 'Zapier',
     description: 'Automation tool that connects your favorite apps.',
@@ -602,6 +1064,21 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 3000
   },
   {
+    name: 'Pabbly Connect',
+    description: 'Integration platform to automate your workflow.',
+    category: 'Automation',
+    url: 'https://pabbly.com/connect/',
+    icon: '🔌',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['integration', 'automation', 'workflow'],
+    rating: 4.3,
+    reviews: 1500
+  },
+
+  // AI Tools
+  {
     name: 'ChatGPT',
     description: 'AI-powered conversational agent by OpenAI.',
     category: 'AI',
@@ -641,6 +1118,45 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 15000
   },
   {
+    name: 'GitHub Copilot',
+    description: 'AI pair programmer that helps you write code faster.',
+    category: 'AI',
+    url: 'https://github.com/features/copilot',
+    icon: '👨‍💻',
+    featured: true,
+    active: true,
+    price: 'Paid',
+    tags: ['ai', 'coding', 'github'],
+    rating: 4.3,
+    reviews: 20000
+  },
+  {
+    name: 'Jasper',
+    description: 'AI content platform that helps create better content faster.',
+    category: 'AI',
+    url: 'https://jasper.ai/',
+    icon: '✍️',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['ai', 'content', 'writing'],
+    rating: 4.4,
+    reviews: 6000
+  },
+  {
+    name: 'Copy.ai',
+    description: 'AI-powered copywriter that generates high-quality copy for your business.',
+    category: 'AI',
+    url: 'https://copy.ai/',
+    icon: '📝',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['ai', 'copywriting', 'content'],
+    rating: 4.3,
+    reviews: 8500
+  },
+  {
     name: 'Stable Diffusion',
     description: 'Open-source deep learning text-to-image model.',
     category: 'AI',
@@ -654,18 +1170,20 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     reviews: 10000
   },
   {
-    name: 'GitHub Copilot',
-    description: 'AI pair programmer that helps you write code faster.',
+    name: 'Replicate',
+    description: 'Run machine learning models in the cloud.',
     category: 'AI',
-    url: 'https://github.com/features/copilot',
-    icon: '👨‍💻',
-    featured: true,
+    url: 'https://replicate.com/',
+    icon: '🔬',
+    featured: false,
     active: true,
-    price: 'Paid',
-    tags: ['ai', 'coding', 'github'],
-    rating: 4.3,
-    reviews: 20000
+    price: 'Pay-per-use',
+    tags: ['ai', 'ml', 'cloud'],
+    rating: 4.5,
+    reviews: 3000
   },
+
+  // Writing Tools
   {
     name: 'Grammarly',
     description: 'AI-powered writing assistant for grammar and style.',
@@ -691,5 +1209,44 @@ export const defaultTools: Omit<Tool, 'id'>[] = [
     tags: ['writing', 'editing', 'clarity'],
     rating: 4.3,
     reviews: 5000
+  },
+  {
+    name: 'ProWritingAid',
+    description: 'Grammar checker, style editor, and writing mentor.',
+    category: 'Writing',
+    url: 'https://prowritingaid.com/',
+    icon: '📚',
+    featured: false,
+    active: true,
+    price: 'Free/Paid',
+    tags: ['grammar', 'style', 'editing'],
+    rating: 4.4,
+    reviews: 8000
+  },
+  {
+    name: 'Ulysses',
+    description: 'Writing app for Mac, iPad and iPhone.',
+    category: 'Writing',
+    url: 'https://ulysses.app/',
+    icon: '🖋️',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['writing', 'mac', 'markdown'],
+    rating: 4.5,
+    reviews: 3000
+  },
+  {
+    name: 'Scrivener',
+    description: 'Content-generation tool for writers.',
+    category: 'Writing',
+    url: 'https://literatureandlatte.com/scrivener/',
+    icon: '📜',
+    featured: false,
+    active: true,
+    price: 'Paid',
+    tags: ['writing', 'research', 'organization'],
+    rating: 4.6,
+    reviews: 4500
   }
 ];

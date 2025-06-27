@@ -196,7 +196,7 @@ const sdkConfig = {
       }
     },
     orders: {
-      required: ['clientName', 'clientEmail', 'service', 'totalAmount'],
+      required: ['clientName', 'clientEmail', 'service'],
       types: {
         clientName: 'string',
         clientEmail: 'string',
