@@ -83,6 +83,7 @@ const sdkConfig = {
       },
       defaults: {
         status: 'pending',
+        totalAmount: 0,
         created: new Date().toISOString()
       }
     }
