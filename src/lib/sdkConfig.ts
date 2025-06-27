@@ -201,14 +201,100 @@ const sdkConfig = {
         clientName: 'string',
         clientEmail: 'string',
         service: 'string',
-        totalAmount: 'number',
+        amount: 'number',
         status: 'string',
         requirements: 'string'
       },
       defaults: {
         status: 'pending',
-        totalAmount: 0,
+        amount: 0,
         created: new Date().toISOString()
+      }
+    },
+    consultations: {
+      required: ['title', 'description', 'duration'],
+      types: {
+        title: 'string',
+        description: 'string',
+        duration: 'number',
+        price: 'number',
+        category: 'string',
+        available: 'boolean',
+        image: 'string',
+        features: 'array',
+        bookingUrl: 'string'
+      },
+      defaults: {
+        available: true,
+        created: new Date().toISOString(),
+        features: []
+      }
+    },
+    toolkits: {
+      required: ['name', 'description', 'category'],
+      types: {
+        name: 'string',
+        description: 'string',
+        category: 'string',
+        price: 'number',
+        image: 'string',
+        downloadUrl: 'string',
+        fileSize: 'string',
+        fileType: 'string',
+        includes: 'array',
+        tags: 'array',
+        featured: 'boolean',
+        active: 'boolean'
+      },
+      defaults: {
+        featured: false,
+        active: true,
+        created: new Date().toISOString(),
+        includes: [],
+        tags: []
+      }
+    },
+    leadMagnets: {
+      required: ['title', 'type', 'downloadUrl'],
+      types: {
+        title: 'string',
+        description: 'string',
+        type: 'string',
+        downloadUrl: 'string',
+        image: 'string',
+        fileSize: 'string',
+        pages: 'number',
+        category: 'string',
+        featured: 'boolean',
+        active: 'boolean',
+        downloads: 'number'
+      },
+      defaults: {
+        featured: false,
+        active: true,
+        downloads: 0,
+        created: new Date().toISOString()
+      }
+    },
+    emailFlows: {
+      required: ['name', 'trigger', 'emails'],
+      types: {
+        name: 'string',
+        description: 'string',
+        trigger: 'string',
+        emails: 'array',
+        active: 'boolean',
+        subscribers: 'number',
+        openRate: 'number',
+        clickRate: 'number'
+      },
+      defaults: {
+        active: true,
+        subscribers: 0,
+        openRate: 0,
+        clickRate: 0,
+        created: new Date().toISOString(),
+        emails: []
       }
     }
   },
@@ -226,8 +312,15 @@ const sdkConfig = {
       <p>Hi {{clientName}},</p>
       <p>Thank you for your order! Here are the details:</p>
       <p><strong>Service:</strong> {{service}}</p>
-      <p><strong>Amount:</strong> ${{totalAmount}}</p>
+      <p><strong>Amount:</strong> ${{amount}}</p>
       <p>We'll be in touch soon to discuss your requirements.</p>
+    `,
+    leadMagnetDelivery: `
+      <h2>Your Free Resource is Ready!</h2>
+      <p>Hi there,</p>
+      <p>Thank you for downloading <strong>{{title}}</strong>!</p>
+      <p><a href="{{downloadUrl}}" style="background: #4F46E5; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px;">Download Now</a></p>
+      <p>Best regards,<br>Ridwanullah</p>
     `
   }
 };

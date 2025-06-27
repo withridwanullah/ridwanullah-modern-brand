@@ -7,6 +7,7 @@ import { PortfolioManager } from './PortfolioManager';
 import { ServiceManager } from './ServiceManager';
 import { TutorialManager } from './TutorialManager';
 import { ToolsManager } from './ToolsManager';
+import { ConsultationManager } from './ConsultationManager';
 
 export const ContentManager = () => {
   return (
@@ -21,12 +22,13 @@ export const ContentManager = () => {
       </Card>
 
       <Tabs defaultValue="blog" className="w-full">
-        <TabsList className="grid w-full grid-cols-5">
+        <TabsList className="grid w-full grid-cols-6">
           <TabsTrigger value="blog">Blog Posts</TabsTrigger>
           <TabsTrigger value="tutorials">Tutorials</TabsTrigger>
           <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
           <TabsTrigger value="services">Services</TabsTrigger>
           <TabsTrigger value="tools">Tools</TabsTrigger>
+          <TabsTrigger value="consultations">Consultations</TabsTrigger>
         </TabsList>
 
         <TabsContent value="blog" className="mt-6">
@@ -47,6 +49,10 @@ export const ContentManager = () => {
 
         <TabsContent value="tools" className="mt-6">
           <ToolsManager />
+        </TabsContent>
+
+        <TabsContent value="consultations" className="mt-6">
+          <ConsultationManager />
         </TabsContent>
       </Tabs>
     </div>
