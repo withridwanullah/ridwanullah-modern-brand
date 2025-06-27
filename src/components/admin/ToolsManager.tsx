@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { sdk } from '@/lib/sdkConfig';
 import { toast } from '@/hooks/use-toast';
-import { Plus, Edit, Trash2, Tool, Eye, EyeOff } from 'lucide-react';
+import { Plus, Edit, Trash2, Wrench, Eye, EyeOff } from 'lucide-react';
 
 export const ToolsManager = () => {
   const [isCreating, setIsCreating] = useState(false);
