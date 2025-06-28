@@ -220,124 +220,113 @@ sdkConfig.schemas = {
       created: createTimestamp(),
       features: []
     }
-  }
-};
-
-// Define orders schema separately with explicit property assignment
-const ordersDefaults = {
-  status: 'pending',
-  created: createTimestamp()
-};
-
-// Explicitly assign amount property to avoid TypeScript confusion
-ordersDefaults['amount'] = 0;
-
-sdkConfig.schemas['orders'] = {
-  required: ['clientName', 'clientEmail', 'service'],
-  types: {
-    clientName: 'string',
-    clientEmail: 'string',
-    service: 'string',
-    amount: 'number',
-    status: 'string',
-    requirements: 'string',
-    created: 'string'
   },
-  defaults: ordersDefaults
-};
-
-// Continue with other schemas
-sdkConfig.schemas['consultations'] = {
-  required: ['title', 'description', 'duration'],
-  types: {
-    title: 'string',
-    description: 'string',
-    duration: 'number',
-    price: 'number',
-    category: 'string',
-    available: 'boolean',
-    image: 'string',
-    features: 'array',
-    bookingUrl: 'string',
-    created: 'string'
+  orders: {
+    required: ['clientName', 'clientEmail', 'service'],
+    types: {
+      clientName: 'string',
+      clientEmail: 'string',
+      service: 'string',
+      amount: 'number',
+      status: 'string',
+      requirements: 'string',
+      created: 'string'
+    },
+    defaults: {
+      status: 'pending',
+      amount: 0,
+      created: createTimestamp()
+    }
   },
-  defaults: {
-    available: true,
-    created: createTimestamp(),
-    features: []
-  }
-};
-
-sdkConfig.schemas['toolkits'] = {
-  required: ['name', 'description', 'category'],
-  types: {
-    name: 'string',
-    description: 'string',
-    category: 'string',
-    price: 'number',
-    image: 'string',
-    downloadUrl: 'string',
-    fileSize: 'string',
-    fileType: 'string',
-    includes: 'array',
-    tags: 'array',
-    featured: 'boolean',
-    active: 'boolean',
-    created: 'string'
+  consultations: {
+    required: ['title', 'description', 'duration'],
+    types: {
+      title: 'string',
+      description: 'string',
+      duration: 'number',
+      price: 'number',
+      category: 'string',
+      available: 'boolean',
+      image: 'string',
+      features: 'array',
+      bookingUrl: 'string',
+      created: 'string'
+    },
+    defaults: {
+      available: true,
+      created: createTimestamp(),
+      features: []
+    }
   },
-  defaults: {
-    featured: false,
-    active: true,
-    created: createTimestamp(),
-    includes: [],
-    tags: []
-  }
-};
-
-sdkConfig.schemas['leadMagnets'] = {
-  required: ['title', 'type', 'downloadUrl'],
-  types: {
-    title: 'string',
-    description: 'string',
-    type: 'string',
-    downloadUrl: 'string',
-    image: 'string',
-    fileSize: 'string',
-    pages: 'number',
-    category: 'string',
-    featured: 'boolean',
-    active: 'boolean',
-    downloads: 'number',
-    created: 'string'
+  toolkits: {
+    required: ['name', 'description', 'category'],
+    types: {
+      name: 'string',
+      description: 'string',
+      category: 'string',
+      price: 'number',
+      image: 'string',
+      downloadUrl: 'string',
+      fileSize: 'string',
+      fileType: 'string',
+      includes: 'array',
+      tags: 'array',
+      featured: 'boolean',
+      active: 'boolean',
+      created: 'string'
+    },
+    defaults: {
+      featured: false,
+      active: true,
+      created: createTimestamp(),
+      includes: [],
+      tags: []
+    }
   },
-  defaults: {
-    featured: false,
-    active: true,
-    downloads: 0,
-    created: createTimestamp()
-  }
-};
-
-sdkConfig.schemas['emailFlows'] = {
-  required: ['name', 'trigger', 'emails'],
-  types: {
-    name: 'string',
-    description: 'string',
-    trigger: 'string',
-    emails: 'array',
-    active: 'boolean',
-    subscribers: 'number',
-    openRate: 'number',
-    clickRate: 'number',
-    created: 'string'
+  leadMagnets: {
+    required: ['title', 'type', 'downloadUrl'],
+    types: {
+      title: 'string',
+      description: 'string',
+      type: 'string',
+      downloadUrl: 'string',
+      image: 'string',
+      fileSize: 'string',
+      pages: 'number',
+      category: 'string',
+      featured: 'boolean',
+      active: 'boolean',
+      downloads: 'number',
+      created: 'string'
+    },
+    defaults: {
+      featured: false,
+      active: true,
+      downloads: 0,
+      created: createTimestamp()
+    }
   },
-  defaults: {
-    active: true,
-    subscribers: 0,
-    openRate: 0,
-    clickRate: 0,
-    created: createTimestamp(),
-    emails: []
+  emailFlows: {
+    required: ['name', 'trigger', 'emails'],
+    types: {
+      name: 'string',
+      description: 'string',
+      trigger: 'string',
+      emails: 'array',
+      active: 'boolean',
+      subscribers: 'number',
+      openRate: 'number',
+      clickRate: 'number',
+      created: 'string'
+    },
+    defaults: {
+      active: true,
+      subscribers: 0,
+      openRate: 0,
+      clickRate: 0,
+      created: createTimestamp(),
+      emails: []
+    }
   }
 };
 
