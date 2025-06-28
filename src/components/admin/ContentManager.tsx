@@ -10,6 +10,7 @@ import { ToolsManager } from './ToolsManager';
 import { ConsultationManager } from './ConsultationManager';
 import { ToolkitManager } from './ToolkitManager';
 import { LeadMagnetManager } from './LeadMagnetManager';
+import { EmailFlowManager } from './EmailFlowManager';
 
 export const ContentManager = () => {
   return (
@@ -24,7 +25,7 @@ export const ContentManager = () => {
       </Card>
 
       <Tabs defaultValue="blog" className="w-full">
-        <TabsList className="grid w-full grid-cols-8">
+        <TabsList className="grid w-full grid-cols-9">
           <TabsTrigger value="blog">Blog Posts</TabsTrigger>
           <TabsTrigger value="tutorials">Tutorials</TabsTrigger>
           <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
@@ -33,6 +34,7 @@ export const ContentManager = () => {
           <TabsTrigger value="consultations">Consultations</TabsTrigger>
           <TabsTrigger value="toolkits">Toolkits</TabsTrigger>
           <TabsTrigger value="lead-magnets">Lead Magnets</TabsTrigger>
+          <TabsTrigger value="email-flows">Email Flows</TabsTrigger>
         </TabsList>
 
         <TabsContent value="blog" className="mt-6">
@@ -65,6 +67,10 @@ export const ContentManager = () => {
 
         <TabsContent value="lead-magnets" className="mt-6">
           <LeadMagnetManager />
+        </TabsContent>
+
+        <TabsContent value="email-flows" className="mt-6">
+          <EmailFlowManager />
         </TabsContent>
       </Tabs>
     </div>

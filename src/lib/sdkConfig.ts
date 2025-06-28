@@ -1,20 +1,25 @@
 
 import UniversalSDK, { type UniversalSDKConfig, type SchemaDefinition } from './sdk';
 
-// Define proper TypeScript interfaces
-interface AppSchemas {
-  [key: string]: SchemaDefinition;
+// Helper function for creating timestamps
+function createTimestamp(): string {
+  return new Date().toISOString();
 }
 
-interface AppTemplates {
-  [key: string]: string;
-}
+// Configuration for the SDK with explicit property assignment
+const sdkConfig: UniversalSDKConfig = {
+  owner: import.meta.env.VITE_GITHUB_OWNER || 'your-github-username',
+  repo: import.meta.env.VITE_GITHUB_REPO || 'ridwan-brand-data',
+  token: import.meta.env.VITE_GITHUB_TOKEN || 'your-github-token',
+  branch: 'main',
+  basePath: 'db',
+  mediaPath: 'media',
+  schemas: {},
+  templates: {}
+};
 
-// Get current timestamp for defaults
-const getCurrentTimestamp = (): string => new Date().toISOString();
-
-// Define schemas with proper typing
-const appSchemas: AppSchemas = {
+// Define schemas separately to avoid TypeScript confusion
+sdkConfig.schemas = {
   contacts: {
     required: ['name', 'email', 'message'],
     types: {
@@ -29,7 +34,7 @@ const appSchemas: AppSchemas = {
     },
     defaults: {
       status: 'new',
-      created: getCurrentTimestamp()
+      created: createTimestamp()
     }
   },
   portfolio: {
@@ -46,7 +51,7 @@ const appSchemas: AppSchemas = {
     },
     defaults: {
       featured: false,
-      created: getCurrentTimestamp()
+      created: createTimestamp()
     }
   },
   blog: {
@@ -70,7 +75,7 @@ const appSchemas: AppSchemas = {
       published: false,
       featured: false,
       author: 'Ridwanullah',
-      created: getCurrentTimestamp(),
+      created: createTimestamp(),
       views: 0,
       likes: 0,
       tags: []
@@ -101,7 +106,7 @@ const appSchemas: AppSchemas = {
       published: false,
       featured: false,
       author: 'Ridwanullah',
-      created: getCurrentTimestamp(),
+      created: createTimestamp(),
       views: 0,
       likes: 0,
       tags: [],
@@ -134,7 +139,7 @@ const appSchemas: AppSchemas = {
       published: false,
       featured: false,
       instructor: 'Ridwanullah',
-      created: getCurrentTimestamp(),
+      created: createTimestamp(),
       enrollments: 0,
       rating: 0,
       modules: [],
@@ -167,7 +172,7 @@ const appSchemas: AppSchemas = {
       published: false,
       featured: false,
       host: 'Ridwanullah',
-      created: getCurrentTimestamp(),
+      created: createTimestamp(),
       plays: 0,
       likes: 0,
       guests: [],
@@ -193,7 +198,7 @@ const appSchemas: AppSchemas = {
     defaults: {
       featured: false,
       active: true,
-      created: getCurrentTimestamp(),
+      created: createTimestamp(),
       rating: 0,
       reviews: 0,
       tags: []
@@ -212,121 +217,132 @@ const appSchemas: AppSchemas = {
     },
     defaults: {
       active: true,
-      created: getCurrentTimestamp(),
+      created: createTimestamp(),
       features: []
-    }
-  },
-  orders: {
-    required: ['clientName', 'clientEmail', 'service'],
-    types: {
-      clientName: 'string',
-      clientEmail: 'string',
-      service: 'string',
-      amount: 'number',
-      status: 'string',
-      requirements: 'string',
-      created: 'string'
-    },
-    defaults: {
-      status: 'pending',
-      amount: 0,
-      created: getCurrentTimestamp()
-    }
-  },
-  consultations: {
-    required: ['title', 'description', 'duration'],
-    types: {
-      title: 'string',
-      description: 'string',
-      duration: 'number',
-      price: 'number',
-      category: 'string',
-      available: 'boolean',
-      image: 'string',
-      features: 'array',
-      bookingUrl: 'string',
-      created: 'string'
-    },
-    defaults: {
-      available: true,
-      created: getCurrentTimestamp(),
-      features: []
-    }
-  },
-  toolkits: {
-    required: ['name', 'description', 'category'],
-    types: {
-      name: 'string',
-      description: 'string',
-      category: 'string',
-      price: 'number',
-      image: 'string',
-      downloadUrl: 'string',
-      fileSize: 'string',
-      fileType: 'string',
-      includes: 'array',
-      tags: 'array',
-      featured: 'boolean',
-      active: 'boolean',
-      created: 'string'
-    },
-    defaults: {
-      featured: false,
-      active: true,
-      created: getCurrentTimestamp(),
-      includes: [],
-      tags: []
-    }
-  },
-  leadMagnets: {
-    required: ['title', 'type', 'downloadUrl'],
-    types: {
-      title: 'string',
-      description: 'string',
-      type: 'string',
-      downloadUrl: 'string',
-      image: 'string',
-      fileSize: 'string',
-      pages: 'number',
-      category: 'string',
-      featured: 'boolean',
-      active: 'boolean',
-      downloads: 'number',
-      created: 'string'
-    },
-    defaults: {
-      featured: false,
-      active: true,
-      downloads: 0,
-      created: getCurrentTimestamp()
-    }
-  },
-  emailFlows: {
-    required: ['name', 'trigger', 'emails'],
-    types: {
-      name: 'string',
-      description: 'string',
-      trigger: 'string',
-      emails: 'array',
-      active: 'boolean',
-      subscribers: 'number',
-      openRate: 'number',
-      clickRate: 'number',
-      created: 'string'
-    },
-    defaults: {
-      active: true,
-      subscribers: 0,
-      openRate: 0,
-      clickRate: 0,
-      created: getCurrentTimestamp(),
-      emails: []
     }
   }
 };
 
-// Define templates with proper typing
-const appTemplates: AppTemplates = {
+// Define orders schema separately with explicit property assignment
+const ordersDefaults = {
+  status: 'pending',
+  created: createTimestamp()
+};
+
+// Explicitly assign amount property to avoid TypeScript confusion
+ordersDefaults['amount'] = 0;
+
+sdkConfig.schemas['orders'] = {
+  required: ['clientName', 'clientEmail', 'service'],
+  types: {
+    clientName: 'string',
+    clientEmail: 'string',
+    service: 'string',
+    amount: 'number',
+    status: 'string',
+    requirements: 'string',
+    created: 'string'
+  },
+  defaults: ordersDefaults
+};
+
+// Continue with other schemas
+sdkConfig.schemas['consultations'] = {
+  required: ['title', 'description', 'duration'],
+  types: {
+    title: 'string',
+    description: 'string',
+    duration: 'number',
+    price: 'number',
+    category: 'string',
+    available: 'boolean',
+    image: 'string',
+    features: 'array',
+    bookingUrl: 'string',
+    created: 'string'
+  },
+  defaults: {
+    available: true,
+    created: createTimestamp(),
+    features: []
+  }
+};
+
+sdkConfig.schemas['toolkits'] = {
+  required: ['name', 'description', 'category'],
+  types: {
+    name: 'string',
+    description: 'string',
+    category: 'string',
+    price: 'number',
+    image: 'string',
+    downloadUrl: 'string',
+    fileSize: 'string',
+    fileType: 'string',
+    includes: 'array',
+    tags: 'array',
+    featured: 'boolean',
+    active: 'boolean',
+    created: 'string'
+  },
+  defaults: {
+    featured: false,
+    active: true,
+    created: createTimestamp(),
+    includes: [],
+    tags: []
+  }
+};
+
+sdkConfig.schemas['leadMagnets'] = {
+  required: ['title', 'type', 'downloadUrl'],
+  types: {
+    title: 'string',
+    description: 'string',
+    type: 'string',
+    downloadUrl: 'string',
+    image: 'string',
+    fileSize: 'string',
+    pages: 'number',
+    category: 'string',
+    featured: 'boolean',
+    active: 'boolean',
+    downloads: 'number',
+    created: 'string'
+  },
+  defaults: {
+    featured: false,
+    active: true,
+    downloads: 0,
+    created: createTimestamp()
+  }
+};
+
+sdkConfig.schemas['emailFlows'] = {
+  required: ['name', 'trigger', 'emails'],
+  types: {
+    name: 'string',
+    description: 'string',
+    trigger: 'string',
+    emails: 'array',
+    active: 'boolean',
+    subscribers: 'number',
+    openRate: 'number',
+    clickRate: 'number',
+    created: 'string'
+  },
+  defaults: {
+    active: true,
+    subscribers: 0,
+    openRate: 0,
+    clickRate: 0,
+    created: createTimestamp(),
+    emails: []
+  }
+};
+
+// Define templates separately
+sdkConfig.templates = {
   contactEmail: `
     <h2>New Contact Message</h2>
     <p><strong>Name:</strong> {{name}}</p>
@@ -352,18 +368,6 @@ const appTemplates: AppTemplates = {
   `
 };
 
-// Configuration for the SDK with proper typing
-const sdkConfig: UniversalSDKConfig = {
-  owner: import.meta.env.VITE_GITHUB_OWNER || 'your-github-username',
-  repo: import.meta.env.VITE_GITHUB_REPO || 'ridwan-brand-data',
-  token: import.meta.env.VITE_GITHUB_TOKEN || 'your-github-token',
-  branch: 'main',
-  basePath: 'db',
-  mediaPath: 'media',
-  schemas: appSchemas,
-  templates: appTemplates
-};
-
 // Initialize SDK instance
 export const sdk = new UniversalSDK(sdkConfig);
 
@@ -371,8 +375,5 @@ export const sdk = new UniversalSDK(sdkConfig);
 sdk.init().catch((error: Error) => {
   console.error('Failed to initialize SDK:', error);
 });
-
-// Export types for use in other parts of the app
-export type { AppSchemas, AppTemplates };
 
 export default sdk;
