@@ -234,8 +234,8 @@ sdkConfig.schemas = {
     },
     defaults: {
       status: 'pending',
-      amount: 0,
-      created: createTimestamp()
+      created: createTimestamp(),
+      amount: 0
     }
   },
   consultations: {
