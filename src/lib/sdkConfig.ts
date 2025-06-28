@@ -212,7 +212,8 @@ const appSchemas: AppSchemas = {
     },
     defaults: {
       active: true,
-      created: getCurrentTimestamp()
+      created: getCurrentTimestamp(),
+      features: []
     }
   },
   orders: {
