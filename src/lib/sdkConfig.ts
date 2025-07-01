@@ -235,7 +235,7 @@ sdkConfig.schemas = {
     defaults: {
       status: 'pending',
       created: createTimestamp(),
-      amount: 0
+      amount: 0 as number
     }
   },
   consultations: {
@@ -345,7 +345,7 @@ sdkConfig.templates = {
     <p>Hi {{clientName}},</p>
     <p>Thank you for your order! Here are the details:</p>
     <p><strong>Service:</strong> {{service}}</p>
-    <p><strong>Amount:</strong> ${{amount}}</p>
+    <p><strong>Amount:</strong> $\${amount}</p>
     <p>We'll be in touch soon to discuss your requirements.</p>
   `,
   leadMagnetDelivery: `
